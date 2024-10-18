@@ -14,10 +14,27 @@ int printColorMap() {
     return i * j;
 }
 
+// Function to capture output from printColorMap
+char* captureOutput(char* outputBuffer) {
+    // Clear the buffer
+    memset(outputBuffer, 0, MAX_OUTPUT);
+    // Set buffer for stdout
+    setvbuf(stdout, outputBuffer, _IOFBF, MAX_OUTPUT);
+
+    printColorMap(); // Call the function
+
+    fflush(stdout); // Flush to ensure all output is captured
+    return outputBuffer; // Return the captured output
+}
+
 int main() {
-    char output[1000];
-    int result = printColorMap();
-    assert(result == 25);
+    char output[MAX_OUTPUT];
+    int result = printColorMap(); // Call the function to print and get the result
+    assert(result == 25); 
+    
+    // Capture the output
+    char* capturedOutput = captureOutput(output);
+    
      // Expected output
     const char* expectedOutput =
         "0 | White | Blue\n"
