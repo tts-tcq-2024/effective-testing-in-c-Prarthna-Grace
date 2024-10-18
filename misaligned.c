@@ -17,9 +17,9 @@ int printColorMap() {
 // Function to capture output from printColorMap
 char* captureOutput(char* outputBuffer) {
     // Clear the buffer
-    memset(outputBuffer, 0, MAX_OUTPUT);
+    memset(outputBuffer, 0, 1000);
     // Set buffer for stdout
-    setvbuf(stdout, outputBuffer, _IOFBF, MAX_OUTPUT);
+    setvbuf(stdout, outputBuffer, _IOFBF, 1000);
 
     printColorMap(); // Call the function
 
@@ -28,7 +28,7 @@ char* captureOutput(char* outputBuffer) {
 }
 
 int main() {
-    char output[MAX_OUTPUT];
+    char output[1000];
     int result = printColorMap(); // Call the function to print and get the result
     assert(result == 25); 
     
