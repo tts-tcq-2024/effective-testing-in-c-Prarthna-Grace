@@ -15,6 +15,8 @@ int printColorMap() {
 }
 
 int main() {
+    char output[1000];
+    int result = printColorMap(output);
     int result = printColorMap();
     assert(result == 25);
      // Expected output
