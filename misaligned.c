@@ -63,8 +63,8 @@ int main() {
         "23 | Violet | Brown\n"
         "24 | Violet | Slate\n";
 
-    // Validate output content
-    assert(strcmp(output, expectedOutput) == 0);
+    // Validate the captured output
+    assert(strcmp(capturedOutput, expectedOutput) == 0);
     printf("All is well (maybe!)\n");
     return 0;
 }
